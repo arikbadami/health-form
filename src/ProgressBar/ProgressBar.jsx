@@ -8,6 +8,10 @@ const CircleProgressBar = ({ percentage, steps }) => {
     for (let i = 1; i <= steps; i++) {
         arr.push(i);
     }
+
+    function isMobileDevice() {
+      return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
     
     return (
       <div className="progress-container">
@@ -26,7 +30,7 @@ const CircleProgressBar = ({ percentage, steps }) => {
             </React.Fragment>
           ))}
         </div>
-        <div className="percentage">{percentage}%</div>
+        {isMobileDevice() ? <></> : <div className="percentage">{percentage}%</div>}
       </div>
     );
   };

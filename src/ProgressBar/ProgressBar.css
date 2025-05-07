@@ -59,3 +59,9 @@
     border: solid;
     margin-bottom: 15px;
   }
+
+  @media (max-width: 768px) {
+    .progress-bar {
+      max-width: 85vw;
+    }
+  }
